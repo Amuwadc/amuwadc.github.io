@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>NEA Amuwa Distribution Center - Digital Portal</title>
+  <style>
+    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #e2e8f0; margin: 0; padding: 0; color: #1e293b; }
+    .portal-shell { max-width: 600px; margin: 0 auto; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 24px rgba(0,0,0,0.12); }
+
+    /* Header */
+    .top-banner { background: #ffffff; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 4px solid #dc2626; }
+    .logo-left { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+    .header-text { text-align: center; flex: 1; padding: 0 8px; }
+    .header-text h1 { margin: 0; font-size: 20px; color: #0054a6; font-weight: 800; line-height: 1.2; }
+    .header-text h2 { margin: 2px 0; font-size: 17px; color: #0054a6; font-weight: 700; line-height: 1.2; }
+    .header-text p { margin: 0; font-size: 13px; color: #1e293b; font-weight: 600; }
+    .flag-right { width: 46px; height: 58px; object-fit: contain; flex-shrink: 0; }
+
+    /* Sub-bar */
+    .blue-ribbon { background: #0054a6; padding: 8px 12px; text-align: center; color: #ffffff; font-size: 13.5px; font-weight: 600; letter-spacing: 0.3px; }
+
+    /* Content Area */
+    .content { padding: 18px 16px; flex: 1; }
+    .group-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #0054a6; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin: 6px 0 12px; display: flex; align-items: center; justify-content: space-between; }
+    .badge-public { background: #dcfce7; color: #166534; font-size: 11px; padding: 2px 8px; border-radius: 12px; }
+    .badge-staff { background: #fef3c7; color: #92400e; font-size: 11px; padding: 2px 8px; border-radius: 12px; }
+
+    /* Grid of Service Buttons */
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+    @media (max-width: 420px) { .card-grid { grid-template-columns: 1fr; } }
+
+    .service-btn {
+      display: flex; flex-direction: column; justify-content: space-between;
+      text-decoration: none; background: #f8fafc; border: 1.5px solid #cbd5e1;
+      border-radius: 10px; padding: 14px; color: #1e293b;
+      transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .service-btn:hover { border-color: #0054a6; box-shadow: 0 4px 12px rgba(0, 84, 166, 0.12); transform: translateY(-2px); }
+    .service-btn.primary { background: #eff6ff; border-color: #3b82f6; }
+
+    .btn-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .icon-box { width: 38px; height: 38px; border-radius: 8px; background: #0054a6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+    .service-btn.alert-card .icon-box { background: #dc2626; }
+    .service-btn.staff-card .icon-box { background: #0f766e; }
+
+    .btn-title { font-size: 15px; font-weight: 700; color: #0f172a; line-height: 1.25; }
+    .btn-sub { font-size: 12px; color: #475569; line-height: 1.4; }
+
+    /* Notice Strip */
+    .notice-box { background: #f1f5f9; border-left: 4px solid #0054a6; padding: 10px 12px; border-radius: 6px; font-size: 12.5px; color: #334155; line-height: 1.5; }
+
+    /* Footer */
+    .footer-banner { background: #0054a6; color: #ffffff; border-top: 4px solid #dc2626; padding: 14px 16px; margin-top: auto; }
+    .footer-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .footer-logo { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; background: #ffffff; padding: 2px; }
+    .footer-top h3 { margin: 0; font-size: 16px; font-family: Georgia, serif; font-weight: normal; }
+    .footer-info { padding-left: 42px; font-size: 12.5px; line-height: 1.6; font-family: Georgia, serif; }
+  </style>
+</head>
+<body>
+
+<div class="portal-shell">
+  <!-- Header -->
+  <div class="top-banner">
+    <img id="headerLogo" class="logo-left" alt="NEA Logo">
+    <div class="header-text">
+      <h1>नेपाल विद्युत प्राधिकरण</h1>
+      <h2>अमुवा वितरण केन्द्र</h2>
+      <p>सियारी-७, अमुवा, रुपन्देही</p>
+    </div>
+    <img id="headerFlag" class="flag-right" alt="Flag of Nepal">
+  </div>
+
+  <div class="blue-ribbon">एकीकृत अनलाइन सेवा पोर्टल (Digital Service Portal)</div>
+
+  <div class="content">
+    <!-- Section 1: Consumer Services -->
+    <div class="group-label">
+      <span>उपभोक्ता सेवा (Consumer Services)</span>
+      <span class="badge-public">Public</span>
+    </div>
+
+    <div class="card-grid">
+      <!-- Consumer KYC Button (Live Link) -->
+      <a class="service-btn primary" href="https://script.google.com/macros/s/AKfycbybQeH-M6cKk9n0xUIJedH5WvCxpTrWpXXtE12ouIPFo2jezVkIPs8naYmr3Q4AVkwY/exec">
+        <div class="btn-top">
+          <div class="icon-box">📋</div>
+          <div class="btn-title">Consumer KYC Update<br><small>उपभोक्ता KYC अद्यावधिक</small></div>
+        </div>
+        <div class="btn-sub">मिटरको फोटो, GPS लोकेसन तथा ग्राहक विवरण दर्ता गर्नुहोस्।</div>
+      </a>
+
+      <!-- No-Light / Fault Complaint Button -->
+      <a class="service-btn alert-card" href="#NO_LIGHT_FORM_URL">
+        <div class="btn-top">
+          <div class="icon-box">⚡</div>
+          <div class="btn-title">No-Light Complaint<br><small>विद्युत अवरोध गुनासो</small></div>
+        </div>
+        <div class="btn-sub">लाइन गएको, पोल/तार ढलेको वा ट्रान्सफर्मर समस्याको जानकारी दिनुहोस्।</div>
+      </a>
+    </div>
+
+    <!-- Section 2: Internal Technical & Field Operations -->
+    <div class="group-label">
+      <span>प्राविधिक तथा कार्यालय प्रयोजन (Field & Staff)</span>
+      <span class="badge-staff">Staff Only</span>
+    </div>
+
+    <div class="card-grid">
+      <!-- DTR Meter Data Logging -->
+      <a class="service-btn staff-card" href="https://docs.google.com/forms/d/e/1FAIpQLSdhxWsAWoVMZFiekQxWSP6c_5vxUO7Pvv1WaN9iSg9rE0nTqw/viewform?usp=sharing&ouid=111477964952287768324">
+        <div class="btn-top">
+          <div class="icon-box">🔌</div>
+          <div class="btn-title">DTR Meter Logging<br><small>वितरण ट्रान्सफर्मर लगिङ</small></div>
+        </div>
+        <div class="btn-sub">DTR लोड, भोल्टेज, फेज सन्तुलन तथा मिटर रिडिङ दर्ता।</div>
+      </a>
+
+      <!-- Substation Data Logging -->
+      <a class="service-btn staff-card" href="#SUBSTATION_LOGGING_URL">
+        <div class="btn-top">
+          <div class="icon-box">🏭</div>
+          <div class="btn-title">Substation Data Log<br><small>सबस्टेशन फिडर लगिङ</small></div>
+        </div>
+        <div class="btn-sub">३३/११ के.भी. अमुवा सबस्टेशन फिडर लोड तथा रिले विवरण।</div>
+      </a>
+
+      <!-- TOD Meter / Inspection -->
+      <a class="service-btn staff-card" href="#TOD_INSPECTION_URL">
+        <div class="btn-top">
+          <div class="icon-box">📊</div>
+          <div class="btn-title">TOD Meter Inspection<br><small>TOD मिटर निरीक्षण</small></div>
+        </div>
+        <div class="btn-sub">औद्योगिक ग्राहकको TOD मिटर रिडिङ तथा सिल विवरण।</div>
+      </a>
+
+      <!-- GIS / Feeder Shutdown Notice -->
+      <a class="service-btn staff-card" href="#SHUTDOWN_NOTICE_URL">
+        <div class="btn-top">
+          <div class="icon-box">🗺️</div>
+          <div class="btn-title">Feeder & GIS Map<br><small>फिडर तथा नक्सा विवरण</small></div>
+        </div>
+        <div class="btn-sub">वितरण लाइन नक्सा तथा मर्मत सटडाउन तालिका।</div>
+      </a>
+    </div>
+
+    <div class="notice-box">
+      <strong>सूचना:</strong> मोबाइलको Home Screen मा <em>"Add to Home Screen"</em> गरेर यो पोर्टललाई एप जस्तै सजिलै प्रयोग गर्न सकिन्छ।
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-banner">
+    <div class="footer-top">
+      <img id="footerLogo" class="footer-logo" alt="NEA Logo">
+      <h3>NEA Amuwa Distribution Center</h3>
+    </div>
+    <div class="footer-info">
+      <div>Email: amuwa@nea.org.np</div>
+      <div>Phone: 071-501028</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Paste your Google Drive File IDs for the NEA Logo and Nepal Flag here
+  const NEA_LOGO_ID   = "1GqVNqpRyAvUvL_cRoef-_y_1Cs16CG_m";
+  const NEPAL_FLAG_ID = "1xgVMOd4UnHem1tWy4nTpd_C0N9PqsxcL";
+
+  document.getElementById("headerLogo").src = "https://drive.google.com/thumbnail?id=" + NEA_LOGO_ID + "&sz=w300";
+  document.getElementById("footerLogo").src = "https://drive.google.com/thumbnail?id=" + NEA_LOGO_ID + "&sz=w200";
+  document.getElementById("headerFlag").src = "https://drive.google.com/thumbnail?id=" + NEPAL_FLAG_ID + "&sz=w300";
+</script>
+</body>
+</html>
