@@ -41,10 +41,18 @@
     .service-btn.primary { background: #eff6ff; border-color: #3b82f6; }
 
     .btn-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-    .icon-box { width: 38px; height: 38px; border-radius: 8px; background: #0054a6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
-    .service-btn.alert-card .icon-box { background: #dc2626; }
-    .service-btn.staff-card .icon-box { background: #0f766e; }
-    .service-btn.extra-card .icon-box { background: #475569; }
+
+    /* Google Drive PNG Icon Container */
+    .icon-box {
+      width: 42px; height: 42px; border-radius: 8px;
+      background: #ffffff; border: 1px solid #e2e8f0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 4px; flex-shrink: 0; overflow: hidden;
+    }
+    .icon-box img {
+      width: 100%; height: 100%;
+      object-fit: contain; display: block;
+    }
 
     .btn-title { font-size: 15px; font-weight: 700; color: #0f172a; line-height: 1.25; }
     .btn-sub { font-size: 12px; color: #475569; line-height: 1.4; }
@@ -84,10 +92,10 @@
     </div>
 
     <div class="card-grid">
-      <!-- Consumer KYC Button (Live Link) -->
+      <!-- Consumer KYC Button -->
       <a class="service-btn primary" href="https://script.google.com/macros/s/AKfycbybQeH-M6cKk9n0xUIJedH5WvCxpTrWpXXtE12ouIPFo2jezVkIPs8naYmr3Q4AVkwY/exec">
         <div class="btn-top">
-          <div class="icon-box">📋</div>
+          <div class="icon-box"><img id="icon-kyc" alt="Consumer KYC"></div>
           <div class="btn-title">Consumer KYC Update<br><small>उपभोक्ता KYC अद्यावधिक</small></div>
         </div>
         <div class="btn-sub">मिटरको फोटो, GPS लोकेसन तथा ग्राहक विवरण दर्ता गर्नुहोस्।</div>
@@ -96,7 +104,7 @@
       <!-- No-Light / Fault Complaint Button -->
       <a class="service-btn alert-card" href="#NO_LIGHT_FORM_URL">
         <div class="btn-top">
-          <div class="icon-box">⚡</div>
+          <div class="icon-box"><img id="icon-nolight" alt="No-Light Complaint"></div>
           <div class="btn-title">No-Light Complaint<br><small>विद्युत अवरोध गुनासो</small></div>
         </div>
         <div class="btn-sub">लाइन गएको, पोल/तार ढलेको वा ट्रान्सफर्मर समस्याको जानकारी दिनुहोस्।</div>
@@ -113,7 +121,7 @@
       <!-- DTR Meter Data Logging -->
       <a class="service-btn staff-card" href="https://docs.google.com/forms/d/e/1FAIpQLSdhxWsAWoVMZFiekQxWSP6c_5vxUO7Pvv1WaN9iSg9rE0nTqw/viewform?usp=sharing&ouid=111477964952287768324">
         <div class="btn-top">
-          <div class="icon-box">🔌</div>
+          <div class="icon-box"><img id="icon-dtr-log" alt="DTR Meter Logging"></div>
           <div class="btn-title">DTR Meter Logging<br><small>वितरण ट्रान्सफर्मर लगिङ</small></div>
         </div>
         <div class="btn-sub">DTR लोड, भोल्टेज, फेज सन्तुलन तथा मिटर रिडिङ दर्ता।</div>
@@ -122,7 +130,7 @@
       <!-- DTR Monitoring -->
       <a class="service-btn staff-card" href="#DTR_MONITORING_URL">
         <div class="btn-top">
-          <div class="icon-box">📈</div>
+          <div class="icon-box"><img id="icon-dtr-monitor" alt="DTR Monitoring"></div>
           <div class="btn-title">DTR Monitoring<br><small>वितरण ट्रान्सफर्मर अनुगमन</small></div>
         </div>
         <div class="btn-sub">DTR अवस्था, ओभरलोड तथा मर्मत प्राथमिकीकरण ड्यासबोर्ड।</div>
@@ -131,7 +139,7 @@
       <!-- Substation Data Logging -->
       <a class="service-btn staff-card" href="#SUBSTATION_LOGGING_URL">
         <div class="btn-top">
-          <div class="icon-box">🏭</div>
+          <div class="icon-box"><img id="icon-substation" alt="Substation Data Log"></div>
           <div class="btn-title">Substation Data Log<br><small>सबस्टेशन फिडर लगिङ</small></div>
         </div>
         <div class="btn-sub">३३/११ के.भी. अमुवा सबस्टेशन फिडर लोड तथा रिले विवरण।</div>
@@ -140,34 +148,34 @@
       <!-- TOD Meter / Inspection -->
       <a class="service-btn staff-card" href="#TOD_INSPECTION_URL">
         <div class="btn-top">
-          <div class="icon-box">📊</div>
+          <div class="icon-box"><img id="icon-tod" alt="TOD Meter Inspection"></div>
           <div class="btn-title">TOD Meter Inspection<br><small>TOD मिटर निरीक्षण</small></div>
         </div>
         <div class="btn-sub">औद्योगिक ग्राहकको TOD मिटर रिडिङ तथा सिल विवरण।</div>
       </a>
 
       <!-- FDM -->
-      <a class="service-btn staff-card" href="#FDM_URL">
+      <a class="service-btn staff-card" href="https://103.16.208.133:58585/fdm/#/login">
         <div class="btn-top">
-          <div class="icon-box">📱</div>
+          <div class="icon-box"><img id="icon-fdm" alt="FDM"></div>
           <div class="btn-title">FDM<br><small>Field Data Management</small></div>
         </div>
         <div class="btn-sub">फिल्ड मिटर रिडिङ तथा उपभोक्ता डेटा व्यवस्थापन।</div>
       </a>
 
       <!-- MDM -->
-      <a class="service-btn staff-card" href="#MDM_URL">
+      <a class="service-btn staff-card" href="https://103.16.208.133:58585/mdm/#/login">
         <div class="btn-top">
-          <div class="icon-box">🗄️</div>
+          <div class="icon-box"><img id="icon-mdm" alt="MDM"></div>
           <div class="btn-title">MDM<br><small>Meter Data Management</small></div>
         </div>
         <div class="btn-sub">स्मार्ट मिटर डेटा भण्डारण, विश्लेषण तथा बिलिङ एकीकरण।</div>
       </a>
 
       <!-- HES -->
-      <a class="service-btn staff-card" href="#HES_URL">
+      <a class="service-btn staff-card" href="https://103.16.208.133:58585/hes/#/login">
         <div class="btn-top">
-          <div class="icon-box">📡</div>
+          <div class="icon-box"><img id="icon-hes" alt="HES"></div>
           <div class="btn-title">HES<br><small>Head-End System</small></div>
         </div>
         <div class="btn-sub">स्मार्ट मिटर कम्युनिकेसन तथा रिमोट कमान्ड प्रणाली।</div>
@@ -176,7 +184,7 @@
       <!-- Measurement -->
       <a class="service-btn staff-card" href="#MEASUREMENT_URL">
         <div class="btn-top">
-          <div class="icon-box">📐</div>
+          <div class="icon-box"><img id="icon-measurement" alt="Measurement"></div>
           <div class="btn-title">Measurement<br><small>नाप जाँच</small></div>
         </div>
         <div class="btn-sub">नयाँ लाइन विस्तार, पोल/तार तथा निर्माण कार्यको नाप जाँच।</div>
@@ -185,7 +193,7 @@
       <!-- GIS / Feeder Shutdown Notice -->
       <a class="service-btn staff-card" href="#SHUTDOWN_NOTICE_URL">
         <div class="btn-top">
-          <div class="icon-box">🗺️</div>
+          <div class="icon-box"><img id="icon-gis" alt="Feeder and GIS Map"></div>
           <div class="btn-title">Feeder & GIS Map<br><small>फिडर तथा नक्सा विवरण</small></div>
         </div>
         <div class="btn-sub">वितरण लाइन नक्सा तथा मर्मत सटडाउन तालिका।</div>
@@ -194,7 +202,7 @@
       <!-- EXTRATAB1 -->
       <a class="service-btn extra-card" href="#EXTRATAB1_URL">
         <div class="btn-top">
-          <div class="icon-box">📌</div>
+          <div class="icon-box"><img id="icon-extratab1" alt="EXTRATAB1"></div>
           <div class="btn-title">EXTRATAB1<br><small>अतिरिक्त सेवा १</small></div>
         </div>
         <div class="btn-sub">लिङ्क तथा विवरण पछि अद्यावधिक गर्न सकिने।</div>
@@ -203,7 +211,7 @@
       <!-- EXTRATAB2 -->
       <a class="service-btn extra-card" href="#EXTRATAB2_URL">
         <div class="btn-top">
-          <div class="icon-box">📌</div>
+          <div class="icon-box"><img id="icon-extratab2" alt="EXTRATAB2"></div>
           <div class="btn-title">EXTRATAB2<br><small>अतिरिक्त सेवा २</small></div>
         </div>
         <div class="btn-sub">लिङ्क तथा विवरण पछि अद्यावधिक गर्न सकिने।</div>
@@ -212,7 +220,7 @@
       <!-- EXTRATAB3 -->
       <a class="service-btn extra-card" href="#EXTRATAB3_URL">
         <div class="btn-top">
-          <div class="icon-box">📌</div>
+          <div class="icon-box"><img id="icon-extratab3" alt="EXTRATAB3"></div>
           <div class="btn-title">EXTRATAB3<br><small>अतिरिक्त सेवा ३</small></div>
         </div>
         <div class="btn-sub">लिङ्क तथा विवरण पछि अद्यावधिक गर्न सकिने।</div>
@@ -221,7 +229,7 @@
       <!-- EXTRATAB4 -->
       <a class="service-btn extra-card" href="#EXTRATAB4_URL">
         <div class="btn-top">
-          <div class="icon-box">📌</div>
+          <div class="icon-box"><img id="icon-extratab4" alt="EXTRATAB4"></div>
           <div class="btn-title">EXTRATAB4<br><small>अतिरिक्त सेवा ४</small></div>
         </div>
         <div class="btn-sub">लिङ्क तथा विवरण पछि अद्यावधिक गर्न सकिने।</div>
@@ -230,7 +238,7 @@
       <!-- EXTRATAB5 -->
       <a class="service-btn extra-card" href="#EXTRATAB5_URL">
         <div class="btn-top">
-          <div class="icon-box">📌</div>
+          <div class="icon-box"><img id="icon-extratab5" alt="EXTRATAB5"></div>
           <div class="btn-title">EXTRATAB5<br><small>अतिरिक्त सेवा ५</small></div>
         </div>
         <div class="btn-sub">लिङ्क तथा विवरण पछि अद्यावधिक गर्न सकिने।</div>
@@ -260,9 +268,40 @@
   const NEA_LOGO_ID   = "1GqVNqpRyAvUvL_cRoef-_y_1Cs16CG_m";
   const NEPAL_FLAG_ID = "1xgVMOd4UnHem1tWy4nTpd_C0N9PqsxcL";
 
-  document.getElementById("headerLogo").src = "https://drive.google.com/thumbnail?id=" + NEA_LOGO_ID + "&sz=w300";
-  document.getElementById("footerLogo").src = "https://drive.google.com/thumbnail?id=" + NEA_LOGO_ID + "&sz=w200";
-  document.getElementById("headerFlag").src = "https://drive.google.com/thumbnail?id=" + NEPAL_FLAG_ID + "&sz=w300";
+  function driveThumb(id, size) {
+    return "https://drive.google.com/thumbnail?id=" + id + "&sz=w" + size;
+  }
+
+  document.getElementById("headerLogo").src = driveThumb(NEA_LOGO_ID, 300);
+  document.getElementById("footerLogo").src = driveThumb(NEA_LOGO_ID, 200);
+  document.getElementById("headerFlag").src = driveThumb(NEPAL_FLAG_ID, 300);
+
+  // Paste the Google Drive File IDs from "NEA_Amuwa_Web_Assets" for each card icon below
+  const CARD_ICON_IDS = {
+    "icon-kyc":         "1LK-FROaA2hACZVkeGn7a_N2AkgVGKULD",
+    "icon-nolight":     "1RonssWkGjZIPUpfabLger2dxrMNu3tMg",
+    "icon-dtr-log":     "1mDUy_mu6kOlDAfskxntRUwN5uv6begEN",
+    "icon-dtr-monitor": "1h6lIHDxXmlDZDHTBEIv1lxynIYSZYKK7",
+    "icon-substation":  "1Rt2w9ThhIUCBv-MP5jDB2CVMq798OhxX",
+    "icon-tod":         "1YeyJzpJAMwPfyeBnvAxAgLMQINrprhrK",
+    "icon-fdm":         "1YfIqGHGPb62lI11fPUCByoNQbEZy6u0X",
+    "icon-mdm":         "1YfIqGHGPb62lI11fPUCByoNQbEZy6u0X",
+    "icon-hes":         "1YfIqGHGPb62lI11fPUCByoNQbEZy6u0X",
+    "icon-measurement": "1yMsC5ntD1eGWVPzlhr8CDUC1_N_X6NX-",
+    "icon-gis":         "1wTIcJt1b756Ccl3rb7gLbmH0cUhbflRu",
+    "icon-extratab1":   "1Xi-qJQJT9UBGAvOVWc-nCD3spiTfpGIj",
+    "icon-extratab2":   "PASTE_EXTRATAB2_ICON_DRIVE_ID",
+    "icon-extratab3":   "PASTE_EXTRATAB3_ICON_DRIVE_ID",
+    "icon-extratab4":   "PASTE_EXTRATAB4_ICON_DRIVE_ID",
+    "icon-extratab5":   "PASTE_EXTRATAB5_ICON_DRIVE_ID"
+  };
+
+  Object.entries(CARD_ICON_IDS).forEach(([elementId, fileId]) => {
+    const imgEl = document.getElementById(elementId);
+    if (imgEl && fileId && !fileId.startsWith("PASTE_")) {
+      imgEl.src = driveThumb(fileId, 200);
+    }
+  });
 </script>
 </body>
 </html>
